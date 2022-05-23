@@ -5,6 +5,9 @@ import {
   addDoc,
   collection,
   onSnapshot,
+  doc,
+  deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -41,3 +44,19 @@ export const addNewUser = (name, email, phone) => {
 };
 
 export const onGetUsers = (callback) => onSnapshot(collectionRef, callback);
+
+export const onGetUser = (id, callback) => {
+  onSnapshot(doc(db, "users", id), callback);
+};
+
+export const deleteUser = (id) => {
+  deleteDoc(doc(db, "users", id));
+};
+
+export const updateUser = (id, name, email, phone) => {
+  updateDoc(doc(db, "users", id), {
+    nombre: name,
+    email: email,
+    num_telefono: phone,
+  });
+};
