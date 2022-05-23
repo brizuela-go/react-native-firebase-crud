@@ -13,7 +13,7 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDblwGey5mn6lKOKnUX3l75JYDGT5-9Z8E",
+  apiKey: process.env.REACT_NATIVE_FIREBASE_API_KEY,
   authDomain: "react-native-crud-6c677.firebaseapp.com",
   projectId: "react-native-crud-6c677",
   storageBucket: "react-native-crud-6c677.appspot.com",
